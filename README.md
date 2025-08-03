@@ -1,90 +1,83 @@
-# Comparador de Fitxers i Directoris (Python + Bash)
-
-Aquest projecte combina Python i Bash per comparar dos fitxers o dos directoris, i crear un nou directori a partir d'un fitxer de registre (`recents.log`). El resultat de la comparació es desa al fitxer `resultat/resultatDir.txt`.
+# ⚡️ Gestió d'Estacions de Recarrega de Vehicles Elèctrics ⚡️
 
 ---
 
-## ▶️ Execució
+## 📋 Descripció del projecte
 
-Per executar el programa principal:
-
-```bash
-python3 comparador.py <ruta1> <ruta2> <directori_nou>
-```
-
-### Exemples
-
-- Comparar dos fitxers:
-
-```bash
-python3 comparador.py arxiu1.txt arxiu2.txt noudir
-```
-
-- Comparar dos directoris:
-
-```bash
-python3 comparador.py carpeta1 carpeta2 noudir
-```
+Aquest projecte en **Java** gestiona una llista d’estacions de recarrega per a vehicles elèctrics.  
+Permet llegir dades d’un fitxer CSV i oferir diverses funcionalitats com eliminar estacions d’una població, buscar la més propera a una ubicació, filtrar per tipus de velocitat de recarrega, i mostrar les estacions amb més capacitat o més properes.
 
 ---
 
-## ⚙️ Funcionament
+## 🚀 Funcionalitats principals
 
-- El script comprova que hi hagi exactament 3 arguments.
-- El primer i segon arguments han de ser del mateix tipus (fitxer o directori).
-- En funció del tipus:
-  - Si són fitxers: executa `compfitxer.sh`
-  - Si són directoris: executa `comptot.sh`
-- El directori especificat com a tercer argument es reinicia si ja existeix.
-- Es genera un nou directori amb `crearnou.sh` a partir del contingut de `recents.log`.
-- El fitxer `resultat/resultatDir.txt` es buida i s'utilitza per guardar el resultat de la comparació.
-
----
-
-## 📌 Scripts rellevants
-
-### `comparador.py` (Python)
-- Gestiona els arguments i decideix quin script Bash executar.
-- S'encarrega d'esborrar fitxers/directoris previs per començar en net.
-
-### `tipus.sh`
-- Determina si una ruta és:
-  - 1 → fitxer
-  - 2 → directori
-  - altra → error
-
-### `compfitxer.sh`
-- Compara dues rutes si són fitxers.
-- Escriu diferències a `resultat/resultatDir.txt`.
-
-### `comptot.sh`
-- Compara el contingut de dos directoris recursivament.
-
-### `crearnou.sh`
-- Crea un nou directori i hi copia informació basada en `recents.log`.
+- Lectura de dades des d’un fitxer CSV amb informació de fins a 418 estacions.  
+- Menú interactiu per seleccionar diferents operacions:  
+  - Eliminar estacions d’una població.  
+  - Trobar la primera estació d’una província i comparar distàncies.  
+  - Comptar estacions segons tipus de velocitat.  
+  - Mostrar estació amb més places disponibles.  
+  - Mostrar estacions més properes a una ubicació amb radi configurable.  
+  - Visualitzar totes les estacions carregades.  
+- Càlcul de distàncies geogràfiques per determinar proximitats.
 
 ---
 
-## 📂 Fitxers de sortida
+## 🛠️ Funcionament i ús
 
-El fitxer `resultat/resultatDir.txt` inclou el resultat de la comparació entre:
-- Línies (si són fitxers)
-- Estructura i contingut (si són directoris)
-
----
-
-## 🧪 Validacions i errors gestionats
-
-- Error si no s’introdueixen 3 arguments exactes.
-- Error si es vol comparar un fitxer amb un directori.
-- Els fitxers i directoris es netegen abans d’executar el procés.
+1. En executar el programa, es demana a l’usuari indicar quantes línies del fitxer vol llegir (fins a 418).  
+2. El programa llegeix les dades del fitxer `EstacionsRecarregaReduit.csv`.  
+3. S’activa un menú amb diferents opcions per manipular i consultar les estacions.  
+4. L’usuari tria una opció i el programa executa l’acció corresponent.  
+5. El menú es repeteix fins que l’usuari decideix sortir.
 
 ---
 
-## 👨‍💻 Autor
+## 💻 Com compilar i executar
 
-Pràctica realitzada com a part d’una assignatura per practicar:
+Assegura’t de tenir Java JDK 8 o superior instal·lat.
 
-- Integració entre Python i Bash
-- Tractament de fitxers i directoris
-- Automatització i processament de dades
+1. Compila el projecte (executa la comanda des de la carpeta arrel on tens els fitxers `.java`):
+
+    ```bash
+    javac -d bin aplicacio/UsaLlistaEstacionsVE.java
+    ```
+
+2. Executa el programa:
+
+    ```bash
+    java -cp bin aplicacio.UsaLlistaEstacionsVE
+    ```
+
+---
+
+## 📂 Estructura del projecte
+
+- `aplicacio/` : paquet que conté la classe principal.  
+- `dades/` : classes que defineixen i gestionen les estacions.  
+- `EstacionsRecarregaReduit.csv` : fitxer CSV amb les dades de les estacions.
+
+---
+
+## 📋 Requisits
+
+- Fitxer CSV correcte i present a la carpeta arrel.  
+- Java JDK 8 o superior.
+
+---
+
+## 🤝 Col·laboracions
+
+Si vols contribuir, fes un fork i envia un pull request.
+
+---
+
+## 📝 Autor
+
+Jon Jordi Salvadó Pérez
+
+---
+
+## 📄 Llicència
+
+MIT License.
