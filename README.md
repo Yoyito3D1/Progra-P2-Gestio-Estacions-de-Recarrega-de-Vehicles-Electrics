@@ -1,4 +1,4 @@
-# ⚡️ Gestió d'Estacions de Recarrega de Vehicles Elèctrics ⚡️
+# ⚡️ Gestió d'Estacions de Recarrega de Vehicles Elèctrics 
 
 ---
 
