@@ -1,83 +1,43 @@
-# ⚡️ Gestió d'Estacions de Recarrega de Vehicles Elèctrics 
+# ⚡️ Electric Vehicle Charging Station Management
 
----
+## 📋 Project Description
+This Java project manages a list of electric vehicle charging stations.  
+It allows reading data from a CSV file and provides multiple functionalities such as removing stations from a given city, finding the closest one to a specific location, filtering by charging speed type, and displaying the stations with the largest capacity or closest distance.
 
-## 📋 Descripció del projecte
+## 🚀 Main Features
+- Read data from a CSV file containing up to 418 stations.  
+- Interactive menu to select different operations:  
+  - Remove stations from a city.  
+  - Find the first station in a province and compare distances.  
+  - Count stations by charging speed type.  
+  - Show the station with the highest number of available slots.  
+  - Show the nearest stations to a location with a configurable radius.  
+  - Display all loaded stations.  
+- Geographic distance calculation to determine proximity.  
 
-Aquest projecte en **Java** gestiona una llista d’estacions de recarrega per a vehicles elèctrics.  
-Permet llegir dades d’un fitxer CSV i oferir diverses funcionalitats com eliminar estacions d’una població, buscar la més propera a una ubicació, filtrar per tipus de velocitat de recarrega, i mostrar les estacions amb més capacitat o més properes.
+## 🛠️ Usage
+When executing the program, the user is asked how many lines from the file should be read (up to 418).  
+The program reads data from the file `EstacionsRecarregaReduit.csv`.  
+An interactive menu is displayed with different options to manipulate and query the stations.  
+The user selects an option, and the program performs the corresponding action.  
+The menu repeats until the user decides to exit.  
 
----
+## 💻 How to Compile and Run
+Make sure you have **Java JDK 8 or higher** installed.  
 
-## 🚀 Funcionalitats principals
+Compile the project (from the root folder where your `.java` files are located):  
 
-- Lectura de dades des d’un fitxer CSV amb informació de fins a 418 estacions.  
-- Menú interactiu per seleccionar diferents operacions:  
-  - Eliminar estacions d’una població.  
-  - Trobar la primera estació d’una província i comparar distàncies.  
-  - Comptar estacions segons tipus de velocitat.  
-  - Mostrar estació amb més places disponibles.  
-  - Mostrar estacions més properes a una ubicació amb radi configurable.  
-  - Visualitzar totes les estacions carregades.  
-- Càlcul de distàncies geogràfiques per determinar proximitats.
+javac -d bin aplicacio/UsaLlistaEstacionsVE.java
 
----
+Run the program:  
 
-## 🛠️ Funcionament i ús
+java -cp bin aplicacio.UsaLlistaEstacionsVE
 
-1. En executar el programa, es demana a l’usuari indicar quantes línies del fitxer vol llegir (fins a 418).  
-2. El programa llegeix les dades del fitxer `EstacionsRecarregaReduit.csv`.  
-3. S’activa un menú amb diferents opcions per manipular i consultar les estacions.  
-4. L’usuari tria una opció i el programa executa l’acció corresponent.  
-5. El menú es repeteix fins que l’usuari decideix sortir.
+## 📂 Project Structure
+- aplicacio/                     : Package containing the main class  
+- dades/                         : Classes defining and managing stations  
+- EstacionsRecarregaReduit.csv   : CSV file with station data  
 
----
-
-## 💻 Com compilar i executar
-
-Assegura’t de tenir Java JDK 8 o superior instal·lat.
-
-1. Compila el projecte (executa la comanda des de la carpeta arrel on tens els fitxers `.java`):
-
-    ```bash
-    javac -d bin aplicacio/UsaLlistaEstacionsVE.java
-    ```
-
-2. Executa el programa:
-
-    ```bash
-    java -cp bin aplicacio.UsaLlistaEstacionsVE
-    ```
-
----
-
-## 📂 Estructura del projecte
-
-- `aplicacio/` : paquet que conté la classe principal.  
-- `dades/` : classes que defineixen i gestionen les estacions.  
-- `EstacionsRecarregaReduit.csv` : fitxer CSV amb les dades de les estacions.
-
----
-
-## 📋 Requisits
-
-- Fitxer CSV correcte i present a la carpeta arrel.  
-- Java JDK 8 o superior.
-
----
-
-## 🤝 Col·laboracions
-
-Si vols contribuir, fes un fork i envia un pull request.
-
----
-
-## 📝 Autor
-
-Jon Jordi Salvadó Pérez
-
----
-
-## 📄 Llicència
-
-MIT License.
+## 📋 Requirements
+- A valid CSV file located in the project root.  
+- Java JDK 8 or higher.
